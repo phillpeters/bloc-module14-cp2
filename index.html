@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React Hello World</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div id="application-root"></div>
+
+  <script
+    src="https://unpkg.com/react@16/umd/react.development.js">
+  </script>
+  <script
+    src="https://unpkg.com/react-dom@16/umd/react-dom.development.js">
+  </script>
+  <script
+    src="https://unpkg.com/babel-standalone@6/babel.min.js">
+  </script>
+
+  <script type="text/babel">
+    function App(props) {
+      return (
+        <React.Fragment>
+          <header>
+            <img src="https://m.media-amazon.com/images/M/MV5BMTY5NzE3NzU3MF5BMl5BanBnXkFtZTgwMjg0NTQ5MDE@._V1_.jpg" alt="Sally Student's profile picture"></img>
+            <div className='student-info'>
+              <h1>{props.name}</h1>
+              <address>
+                <p>Email: <a href="mailto:mail@email.com"   target="_blank">mail@email.com</a></p>
+                <p>Phone: +1 (234) 567-8901</p>
+              </address>
+            </div>
+          </header>
+          
+          <main>   
+            <section>
+              <h2>Education</h2>
+              <ul>
+                <li>University of California, Berkeley</li>
+              </ul>
+            </section>
+            <section>
+              <h2>Employment History</h2>
+              <table width="80%">
+                <thead>
+                  <tr>
+                    <th scope="col" align="left">Company</th>
+                    <th scope="col" align="left">Title</th>
+                    <th scope="col" align="left">Dates</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td align="left"><em>Acme Inc</em></td>
+                    <td align="left"><em>Project Manager</em></td>
+                    <td align="left"><em>2015 - Present</em></td>
+                  </tr>
+                  <tr>
+                    <td colSpan="3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
+                  </tr>
+                  <tr></tr>
+                  <tr>
+                    <td align="left"><em>Apple</em></td>
+                    <td align="left"><em>Lead Developer</em></td>
+                    <td align="left"><em>2007 - 2015</em></td>
+                  </tr>
+                  <tr>
+                    <td colSpan="3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </main>
+        </React.Fragment>
+      );
+    }
+
+    ReactDOM.render(
+      <App name='Sally Student'/>,
+      document.querySelector('#application-root')
+    );
+  </script>
+</body>
+</html>
